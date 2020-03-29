@@ -21,7 +21,10 @@ public class Contact {
 	public Contact() {
 		super();
 		// TODO Auto-generated constructor stub
-		this.relationship = "spouse";
+		this.name = "diego";
+		this.phone = "212-555-8989";
+		this.relationship = "petspider";
+		
 	}
 	
 	public Contact(String name) {
