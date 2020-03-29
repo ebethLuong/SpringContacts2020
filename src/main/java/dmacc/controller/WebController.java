@@ -18,9 +18,13 @@ public class WebController {
 	@Autowired
 	ContactRepository repo;
 	
-	@GetMapping("/viewAll")
+	@GetMapping({"/", "viewAll"})
 	public String viewAllContacts(Model model) 
 	{
+		if(repo.findAll().isEmpty()) 
+		{
+		return addNewContact(model);
+		}
 	model.addAttribute("contacts", repo.findAll());
 	return "results";
 	}
@@ -62,6 +66,8 @@ public class WebController {
 	repo.delete(c);
 	return viewAllContacts(model);
 	}
+	
+
 
 	
 }
